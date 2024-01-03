@@ -15,7 +15,7 @@ dotenv.config({
   path: path.resolve(__dirname, '../../.env'),
 })
 const mockModulePath = path.resolve(__dirname, 'mocks', 'emptyFunction.js');
-const serverURL = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : process.env.PAYLOAD_PUBLIC_SERVER_URL;
+
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -31,7 +31,7 @@ export default buildConfig({
       }
     })
   },
-  serverURL: serverURL,
+  serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
   collections: [
     Users,
     Media
