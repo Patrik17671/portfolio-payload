@@ -1,7 +1,6 @@
 import { buildConfig } from 'payload/config';
 import path from 'path';
 import Users from './collections/Users';
-import { payloadCloud } from '@payloadcms/plugin-cloud';
 import MegaMenu from "./globals/MegaMenu";
 import HeroContent from "./globals/HeroContent";
 import cloudinaryPlugin from "payload-cloudinary-plugin/dist/plugins";
@@ -46,7 +45,6 @@ export default buildConfig({
   cors: process.env.WHITELIST_ORIGINS ? process.env.WHITELIST_ORIGINS.split(',') : [],
   csrf: process.env.WHITELIST_ORIGINS ? process.env.WHITELIST_ORIGINS.split(',') : [],
   plugins: [
-    payloadCloud(),
     cloudinaryPlugin({ cloudinaryFields: ['file','imageSizes','sizes'] })
   ]
 });
